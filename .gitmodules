@@ -1,0 +1,3 @@
+[submodule "kippel"]
+	path = kippel
+	url = git://github.com/kippel/django-kippel.git
