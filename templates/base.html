@@ -3,16 +3,7 @@
 <head>
  <meta charset='utf-8' />
  <title>{% block title %}{% trans "Galleria" %}{% endblock %}</title>
- <!-- MEDIA_include_js jquery.tools.min -->
- <!-- MEDIA_compile_styles --><!-- MEDIA_include_css style -->
+ <!-- MEDIA_include_js jquery.tools.min --><!-- MEDIA_compile_styles --><!-- MEDIA_include_css style -->
 </head>
-<body>
-  <div id='header'>
-  	<div id='title-header'><h1>{% block title-header %}{% trans 'Booking' %}{% endblock %}</h1></div>
-	
- 	 
-  </div>
-{% block content %}{% endblock content %}
-<!-- MEDIA_compile_scripts -->
-</body>
+<body>{% block content %}{% endblock content %}<!-- MEDIA_compile_scripts --></body>
 </html>

@@ -1,18 +1,22 @@
-{% load i18n %}<!DOCTYPE html>
-<html>
-<head>
- <meta charset='utf-8' />
- <title>{% block title %}{% trans "Galleria" %}{% endblock %}</title>
- <!-- MEDIA_include_js jquery.tools.min -->
- <!-- MEDIA_compile_styles --><!-- MEDIA_include_css style -->
-</head>
-<body>
-  <div id='header'>
-  	<div id='title-header'><h1>{% block title-header %}{% trans 'Galleria' %}{% endblock %}</h1></div>
-	
- 	 
-  </div>
-{% block content %}{% endblock content %}
-<!-- MEDIA_compile_scripts -->
-</body>
-</html>
+{% extends "base.html" %}{% load webdesign %}
+{% block content %}
+<div id='header'>
+<div id='div-search-header'>
+<input type='text' value='' />
+</div>
+<h1>Nom de l'aplicació</h1>
+
+</div>
+<div id='container'>
+<div id='div-info'>
+{% lorem 1 %}
+</div>
+<div id='div-search'>
+<h2>Termes de la cerca</h2>
+<input type='text' value='' id='bt-search-main' />
+</div>
+
+<div id='galeria'></div>
+
+</div>
+{%endblock%}
