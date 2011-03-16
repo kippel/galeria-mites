@@ -7,6 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Example:
     (r'^$', 'photos.views.index'),
+    (r'^load/?$', 'photos.views.load'),
     # (r'^gll/', include('gll.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
