@@ -1,1 +1,5 @@
-<p>hola</p>
+<p>
+{% for photo in photos %}
+<img src='{{photo.photo.url}}' />
+{% endfor %}
+</p>

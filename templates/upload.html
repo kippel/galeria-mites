@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<form name='fr_upload' id='id_fr_upload' method='post' enctype='multipart/form-data'>
+	<table>
+	{{form}}
+	</table>	
+{% csrf_token %}
+<button type='submit'>Pujar Fotografia</button>
+</form>
+{% endblock %}

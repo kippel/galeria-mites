@@ -1,9 +1,11 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from photos.models import Photos
+from photos.forms import PhotosForm
 from django.utils import simplejson
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
+from django.template import RequestContext
 
 def index(request):
   return render_to_response('main.html')
@@ -26,4 +28,19 @@ def load(request):
     result['num'] = len(photos)
         
   return HttpResponse(simplejson.dumps(result) , mimetype='application/json')
+
+#@login_required
+def upload(request):
+  if request.method=='POST':
+    form = PhotosForm(request.POST, request.FILES)
+    if form.is_valid():
+      form.save()
     
+      form = PhotosForm()
+    else:
+      print form.errors
+      
+  else:
+    form = PhotosForm()
+    
+  return render_to_response('upload.html', {'form':form}, context_instance = RequestContext(request))    
