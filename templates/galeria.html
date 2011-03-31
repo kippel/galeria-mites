@@ -1,5 +1,5 @@
-<p>
 {% for photo in photos %}
-<img src='{{photo.photo.url}}' />
+<div id='galeria-photo'>
+<img id='id-photo-{{photo.id}}' name='photo-{{photo.id}}' src='{{photo.photo.url}}' />
+</div>
 {% endfor %}
-</p>

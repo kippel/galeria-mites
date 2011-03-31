@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+<header>
+aquest pagina tindra login posar aqui una petita capçalera amb el nom de la
+persona que ha fet login i sortir
+</header> 
+<div id='container'>
+<p>
+posar aqui petita descripcio de com pujar les imatges
+</p>
 <form name='fr_upload' id='id_fr_upload' method='post' enctype='multipart/form-data'>
 	<table>
 	{{form}}
@@ -7,4 +15,7 @@
 {% csrf_token %}
 <button type='submit'>Pujar Fotografia</button>
 </form>
+
+<p>nuvol de tags per recomanar tags?</p>
+</div>
 {% endblock %}

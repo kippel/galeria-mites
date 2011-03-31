@@ -37,8 +37,8 @@ def upload(request):
       form.save()
     
       form = PhotosForm()
-    else:
-      print form.errors
+    #3else:
+    #  print form.errors
       
   else:
     form = PhotosForm()

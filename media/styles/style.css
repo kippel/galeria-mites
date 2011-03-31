@@ -10,10 +10,20 @@
 
   #div-search-header {
 	float:right;
+	 
   }
 
   #tx-search-main {
 	font-size:1.6em;
 	padding:5px;
 	width:400px;
-  } 
+  }
+
+#tx-search-header {
+	font-size:1.2em;
+	
+}
+
+  #div-search-header {
+	display:none;
+  }  
