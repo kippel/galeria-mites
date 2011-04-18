@@ -1,3 +1,12 @@
+body { background-color: #2d2d2d; background-image:url('fons03.gif');
+	font-family:trebuchet MS,arial,helvetica,verdana; font-size:14px; color:#cccccc;
+	text-shadow: 1px 1px #666666;
+	}
+a:link {color: #00bb11; text-decoration: none}
+a:visited {color: #00bb11; text-decoration: none}
+a:active {color: #3399cc; text-decoration: none}
+a:hover {color: #3399cc; text-decoration: none}
+
   #div-header {
 	display:inline;
   }
