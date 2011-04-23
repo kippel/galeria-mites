@@ -1,5 +1,10 @@
 {% for photo in photos %}
 <div id='galeria-photo'>
-<img width='10%' id='id-photo-{{photo.id}}' name='photo-{{photo.id}}' src='{{photo.photo.url}}' />
+<img id='id-photo-{{photo.id}}' height='120px' name='photo-{{photo.id}}' src='{{photo.photo.url}}' />
 </div>
 {% endfor %}
+
+<div id='galleria-tagcloud'>
+{% include 'include/tagcloud.html' with tagcloud=tagcloud %}
+</div>
+

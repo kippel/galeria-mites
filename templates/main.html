@@ -20,5 +20,9 @@
 
 <div id='galeria'></div>
 <div id='not_found' style='display:none'><h1>No s'han trobat imatges</h1></div>
+<div id='main-tagcloud'>
+{% include 'include/tagcloud.html' with tagcloud=tagcloud %}
+</div>
+
 </div>
 {%endblock%}

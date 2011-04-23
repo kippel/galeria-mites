@@ -7,6 +7,14 @@ a:visited {color: #00bb11; text-decoration: none}
 a:active {color: #3399cc; text-decoration: none}
 a:hover {color: #3399cc; text-decoration: none}
 
+#galeria { position:float;
+	width:750px;
+	margin:8px auto; padding:8px;
+	}
+
+#galeria-photo { display:inline;
+	}
+
   #div-header {
 	display:inline;
   }

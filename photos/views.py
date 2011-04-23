@@ -6,9 +6,40 @@ from django.utils import simplejson
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
+import math
+
+def gen_tag_from_photos(photos):
+  taglist = {}
+  for photo in photos:
+    #part = tag.tags.rsplit(' ')
+    for tag in photo.tags.rsplit(' '):
+      taglist[tag] = 1+taglist.get(tag,0);
+        
+      
+      
+  #print sorted(taglist.items(), key=lambda x: x[1])
+  #maxi = max(taglist.values())
+  tagcloud = []
+  for (x, p) in taglist.items():
+     size = 20*math.log(p, math.e)
+     if int(size) < 10:
+       size = 10 
+ 
+     tagcloud.append({
+        'tag':x,
+        'size': size
+     })
+  
+  return tagcloud  
+  
 
 def index(request):
-  return render_to_response('main.html')
+  
+  tags = Photos.objects.all()
+  
+  tagcloud= gen_tag_from_photos(tags)
+
+  return render_to_response('main.html', {'tagcloud':tagcloud})
  
 @csrf_exempt 
 def load(request):
@@ -18,12 +49,14 @@ def load(request):
   if request.method == 'POST':
     search = request.POST.get('search','')
     
-    search = search.replace(',',' ')
+    search = search.replace(',',' ').lower()
     
-    photos = Photos.objects.filter(tags__search=search)
+    photos = Photos.objects.filter(tags__search=search).order_by('?')[:20]
+  
+    
   
     if len(photos) >0:
-      result['html'] = loader.get_template('galeria.html').render(Context({'photos':photos}))
+      result['html'] = loader.get_template('galeria.html').render(Context({'photos':photos,'tagcloud':gen_tag_from_photos(photos)}))
   
     result['num'] = len(photos)
         
