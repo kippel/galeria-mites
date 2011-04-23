@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.files.storage import FileSystemStorage
+from django.contrib import admin
 import uuid
 
 """
@@ -17,6 +18,15 @@ class Photos(models.Model):
   photo = models.ImageField(storage=fs, upload_to='photos')
   tags = models.CharField(max_length=200)
   
+  def image_field(self):
+    return "<img src='%s' />" % self.photo.url
+
+  image_field.short_description = 'Thumbnail'	
+  image_field.allow_tags = True
+
+class PhotosAdmin(admin.ModelAdmin):
+  list_display = ('photo','image_field', 'tags')
+  pass
   
+admin.site.register(Photos, PhotosAdmin)
   
-  ## posar com a fulltext els tags
