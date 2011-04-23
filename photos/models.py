@@ -19,13 +19,13 @@ class Photos(models.Model):
   tags = models.CharField(max_length=200)
   
   def image_field(self):
-    return "<img src='%s' />" % self.photo.url
+    return "<img src='%s' width='120px' />" % self.photo.url
 
   image_field.short_description = 'Thumbnail'	
   image_field.allow_tags = True
 
 class PhotosAdmin(admin.ModelAdmin):
-  list_display = ('photo','image_field', 'tags')
+  list_display = ('image_field', 'photo', 'tags')
   pass
   
 admin.site.register(Photos, PhotosAdmin)
