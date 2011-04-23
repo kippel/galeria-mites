@@ -11,23 +11,27 @@ import math
 def gen_tag_from_photos(photos):
   taglist = {}
   for photo in photos:
-    #part = tag.tags.rsplit(' ')
     for tag in photo.tags.rsplit(' '):
       taglist[tag] = 1+taglist.get(tag,0);
+  
+  maxsize = 2.5
+  minsize = 1    
+  mincount = 5000;
+  maxcount = 0;
+  for (x, p) in taglist.items():
+    if p > maxcount:
+      maxcount=p
+    if p < mincount:
+      mincount=p
+  
+  constant = math.log(maxcount -(mincount -1 )) /(maxsize -minsize or 1)  
         
-      
-      
-  #print sorted(taglist.items(), key=lambda x: x[1])
-  #maxi = max(taglist.values())
   tagcloud = []
   for (x, p) in taglist.items():
-     size = 11*math.log(p, math.e)
-     if int(size) < 12:
-       size = 12 
- 
+     size = math.log(p - (mincount - 1))/constant + minsize
      tagcloud.append({
         'tag':x,
-        'size': int(size)
+        'size': "%.2f" % size
      })
   
   return tagcloud  
