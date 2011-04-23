@@ -27,7 +27,7 @@ def gen_tag_from_photos(photos):
  
      tagcloud.append({
         'tag':x,
-        'size': size
+        'size': int(size)
      })
   
   return tagcloud  
