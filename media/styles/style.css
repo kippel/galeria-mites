@@ -12,7 +12,9 @@ a:hover {color: #3399cc; text-decoration: none}
 	margin:8px auto; padding:8px;
 	}
 
-#galeria-photo { display:inline;
+#galeria-photo { 
+	display:inline;
+	cursor:pointer;
 	}
 
   #div-header {
@@ -52,7 +54,6 @@ a:hover {color: #3399cc; text-decoration: none}
   }
 
 .simple-overlay {
-/* place overlay on top of other elements */
 	display:none;
 	z-index:10000;
 	-moz-box-shadow:0 0 90px 5px #000;
