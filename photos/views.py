@@ -8,24 +8,27 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
 import math
 
-def gen_tag_from_photos(photos):
+def gen_tag_from_photos(photos, threshold=0, maxsize = 2.5, minsize = 1):
   taglist = {}
+  # agafo els tags i els conto
   for photo in photos:
     for tag in photo.tags.rsplit(' '):
       taglist[tag] = 1+taglist.get(tag,0);
   
-  maxsize = 2.5
-  minsize = 1    
-  mincount = 5000;
-  maxcount = 0;
+  # miro el maxim i el minim i elimino els que no superen el trheshold
+  mincount, maxcount = 5000, 0;
   for (x, p) in taglist.items():
+    if p <= threshold:
+      del taglist[x]
+      continue
+    
     if p > maxcount:
       maxcount=p
     if p < mincount:
       mincount=p
   
-  constant = math.log(maxcount -(mincount -1 )) /(maxsize -minsize or 1)  
-        
+  constant = (math.log(maxcount -(mincount -1 )) /(maxsize -minsize or 1)  or 1)
+
   tagcloud = []
   for (x, p) in taglist.items():
      size = math.log(p - (mincount - 1))/constant + minsize
