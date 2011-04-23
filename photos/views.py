@@ -21,9 +21,9 @@ def gen_tag_from_photos(photos):
   #maxi = max(taglist.values())
   tagcloud = []
   for (x, p) in taglist.items():
-     size = 20*math.log(p, math.e)
-     if int(size) < 10:
-       size = 10 
+     size = 25*math.log(p, math.e)
+     if int(size) < 12:
+       size = 12 
  
      tagcloud.append({
         'tag':x,
