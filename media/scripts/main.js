@@ -29,6 +29,7 @@
         }
         
         $('#galeria').html(data.html);
+        $('.fotografia[rel]').overlay();
       }
       text_searched = true;
     },'json');
@@ -49,6 +50,19 @@
                 var text = (input.val() == '') ? $(this).html() : input.val()+' '+$(this).html();
                 input.val( text);
                 input.focus();
+                
+                if (!first){
+                  
+                  if ( ! input.hasClass('resaltar')){
+                  
+                      input.addClass('resaltar')
+                      setTimeout( function(){
+                        input.removeClass('resaltar');
+                      }, 1000);                    
+                  }
+                
+                }
+                
             });
             
             $('#bt-search-main').click( search );
@@ -68,4 +82,5 @@
             });
             $('#tx-search-main').val('');
             $('#tx-search-main').focus();
+            
   });

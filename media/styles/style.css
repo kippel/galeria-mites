@@ -38,9 +38,32 @@ a:hover {color: #3399cc; text-decoration: none}
 
 #tx-search-header {
 	font-size:1.2em;
+	width:300px;	
+}
+
+.resaltar {
+	border-color:green;
 	
+	box-shadow:3px 3px 3px  rgba(0, 230, 0, 0.90);
 }
 
   #div-search-header {
 	display:none;
-  }  
+  }
+
+.simple-overlay {
+/* place overlay on top of other elements */
+	display:none;
+	z-index:10000;
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;
+}
+.simple-overlay .close {
+	background-image:url(close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}  

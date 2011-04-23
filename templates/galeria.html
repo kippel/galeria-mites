@@ -1,6 +1,12 @@
 {% for photo in photos %}
-<div id='galeria-photo'>
-<img id='id-photo-{{photo.id}}' height='120px' name='photo-{{photo.id}}' src='{{photo.photo.url}}' />
+<div id='galeria-photo' class='galeria-photo'>
+<img class='fotografia' id='id-photo-{{photo.id}}' height='120px' name='photo-{{photo.id}}' src='{{photo.photo.url}}' rel='#overlay-{{photo.id}}'/>
+</div>
+{% endfor %}
+
+{% for photo in photos %}
+<div class='simple-overlay' id='overlay-{{photo.id}}' >
+	<img src='{{photo.photo.url}}' />
 </div>
 {% endfor %}
 
