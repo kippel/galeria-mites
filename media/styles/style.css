@@ -74,6 +74,11 @@ a:hover {color: #3399cc; text-decoration: none}
 background-color:#333;
 	border:1px solid #666;
 }
+
+.simple-overlay img{
+	max-height:450px;
+}
+
 .simple-overlay .close {
 	background-image:url(close.png);
 	position:absolute;
