@@ -19,7 +19,7 @@ def gen_tag_from_photos(photos, threshold=0, maxsize = 2.5, minsize = 1):
   # miro el maxim i el minim i elimino els que no superen el trheshold
   mincount, maxcount = 5000, 0;
   for (x, p) in taglist.items():
-    if p <= threshold:
+    if p <= threshold or len(x) <=2:
       del taglist[x]
       continue
     
