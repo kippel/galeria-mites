@@ -31,7 +31,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
 import math
 
-def gen_tag_from_photos(photos, threshold=0, maxsize = 2.5, minsize = 1):
+def gen_tag_from_photos(photos, threshold=0, maxsize = 3, minsize = 1):
   taglist = {}
   # agafo els tags i els conto
   for photo in photos:
