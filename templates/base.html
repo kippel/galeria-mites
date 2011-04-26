@@ -3,7 +3,24 @@
 <head>
  <meta charset='utf-8' />
  <title>{% block title %}{% trans "Mitòmans" %}{% endblock %}</title>
- <!-- MEDIA_include_js jquery-1.5.1.min overlay.min main toolbox.expose --><!-- MEDIA_compile_styles --><!-- MEDIA_include_css style -->
+ <!-- MEDIA_include_js jquery-1.5.1.min overlay.min toolbox.expose main --><!-- MEDIA_compile_styles --><!-- MEDIA_include_css style -->
 </head>
-<body>{% block content %}{% endblock content %}<!-- MEDIA_compile_scripts --></body>
+<body>{% block content %}{% endblock content %}<!-- MEDIA_compile_scripts -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22972501-1']);
+  _gaq.push(['_setDomainName', '.elcolador.cat']);
+  _gaq.push(['_trackPageview']);
+        
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
 </html>
