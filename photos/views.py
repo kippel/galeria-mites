@@ -14,6 +14,7 @@ def gen_tag_from_photos(photos, threshold=0, maxsize = 2.5, minsize = 1):
   for photo in photos:
     for tag in photo.tags.rsplit(' '):
       taglist[tag] = 1+taglist.get(tag,0);
+
   
   # miro el maxim i el minim i elimino els que no superen el trheshold
   mincount, maxcount = 5000, 0;

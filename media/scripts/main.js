@@ -1,14 +1,22 @@
   var first = true;
-  text_searched = false;
+  var text_searched = false;
+  var search_from_hash = false;
   function search(e){
-    if (first){
-      var text_search = $('#tx-search-main').val();
-    }else{
-      var text_search = $('#tx-search-header').val();
+    if (e){
+      e.preventDefault();
     }
+    if (search_from_hash){
+      var text_search = window.location.hash.substr(1).replace('+',' ');
+      
+      search_from_hash = false;
+      window.location.hash = '';
+            
+    }else{
     
+      var text_search = (first) ? $('#tx-search-main').val() : $('#tx-search-header').val();
+    }
     if ( text_search == ''){
-    
+        alert('Heu de posar almenys una paraula de cerca');    
         return false;
     }
     
@@ -29,7 +37,13 @@
         }
         
         $('#galeria').html(data.html);
-        $('.fotografia[rel]').overlay();
+        $('.fotografia[rel]').overlay({
+          mask: {
+            color: '#ebecff',
+            loadSpeed: 200,
+            opacity: 0.4
+          }
+        });
       }
       text_searched = true;
     },'json');
@@ -52,12 +66,12 @@
                 input.focus();
                 
                 if (!first){
+                  var wrapp = $('#tx-search-wrapper');
+                  if ( ! wrapp.hasClass('resaltar')){
                   
-                  if ( ! input.hasClass('resaltar')){
-                  
-                      input.addClass('resaltar')
+                      wrapp.addClass('resaltar')
                       setTimeout( function(){
-                        input.removeClass('resaltar');
+                        wrapp.removeClass('resaltar');
                       }, 1000);                    
                   }
                 
@@ -66,7 +80,7 @@
             });
             
             $('#bt-search-main').click( search );
-            
+            $('#bt-search-header').click(search);
             $('#tx-search-main').keypress(function(e){
                 if (e.keyCode==13){
                   search();
@@ -82,5 +96,14 @@
             });
             $('#tx-search-main').val('');
             $('#tx-search-main').focus();
+            
+            var hash = window.location.hash;
+            
+            if (hash.length > 1){
+              
+              search_from_hash = true;
+              search();
+            }
+            
             
   });

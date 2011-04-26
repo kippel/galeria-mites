@@ -18,6 +18,10 @@ a:hover {color: #3399cc; text-decoration: none}
 	width:750px;
 	margin:8px auto; padding:8px;
 	}
+	
+#galleria-tagcloud { font-family:arial,helvetica,trebuchet MS; text-shadow: 0px 0px #666666; font-weight:bold;}
+#main-tagcloud{ font-family:arial,helvetica,trebuchet MS; text-shadow: 0px 0px #666666; font-weight:bold;}
+
 
 #galeria-photo { 
 	display:inline;
@@ -43,6 +47,8 @@ a:hover {color: #3399cc; text-decoration: none}
 	font-size:1.6em;
 	padding:5px;
 	width:400px;
+	display:inline-block;
+	margin-top:0px;
   }
 
 #tx-search-header {
@@ -74,4 +80,42 @@ a:hover {color: #3399cc; text-decoration: none}
 	cursor:pointer;
 	height:35px;
 	width:35px;
+}
+
+a.button-principal {
+	background-image:url(cerca01.png);
+	display: inline-block;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 43px;
+	height: 43px;
+	margin-bottom:-14px;
+	background-position: 0 0px
 }  
+
+a.button-principal:hover{
+	background-position: 0 -43px;
+}
+
+a.button-principal:active{
+	background-position:0 -86px;
+}
+
+a.button-header {
+	background-image:url(cerca02.png);
+	display: inline-block;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 29px;
+	height: 29px;
+	margin-bottom:-10px;
+	background-position: 0 0px
+}  
+
+a.button-header:hover{
+	background-position: 0 -29px;
+}
+
+a.button-header:active{
+	background-position:0 -58px;
+}

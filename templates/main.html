@@ -2,8 +2,9 @@
 {% block content %}
 <div id='header'>
 <div id='div-search-header'>
-
-<input id='tx-search-header' name='tx-search-header' type='text' value='' />
+   <div id='tx-search-wrapper'>
+   <input id='tx-search-header' name='tx-search-header' type='text' value='' /><a href='#' class='button-header' id='bt-search-header'></a>
+   </div>
 </div>
 <h1><a href='/' class='titol-header'>Neomitòlegs</a></h1>
 
@@ -14,8 +15,10 @@
 </div>
 <div id='div-search'>
 <h2>Termes de la cerca</h2>
-<input type='text' value='' id='tx-search-main' name='search' placeholder='Introduir tags...'/>
-<input type='button' value='Buscar' id='bt-search-main' />
+<div style='vertical-align:0px'>
+<input type='text' value='' id='tx-search-main' name='search' placeholder='Introduir tags...'/> <a
+class='button-principal' id='bt-search-main'></a>
+</div>
 </div>
 
 <div id='galeria'></div>
