@@ -7,6 +7,12 @@
 {% for photo in photos %}
 <div class='simple-overlay' id='overlay-{{photo.id}}' >
 	<img src='{{photo.photo.url}}' />
+	{% if photo.name != '' %}
+	<div class='details'>
+	<h3>{{ photo.name }}</h3>
+	<p>{{ poto.description}}</p>
+	</div>
+	{% endif %}
 </div>
 {% endfor %}
 
