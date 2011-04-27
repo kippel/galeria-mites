@@ -71,7 +71,8 @@
       }
       text_searched = true;
     },'json');
-    pageTracker._trackEvent('ajax', 'load', text_search)
+
+    _gaq.push(['_trackEvent', 'Fotos', 'load', text_search]);
   }
 
  
