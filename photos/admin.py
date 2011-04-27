@@ -21,21 +21,11 @@
 #       MA 02110-1301, USA.
 #       
 # 
-from django.db import models
-from django.core.files.storage import FileSystemStorage
+from photos.models import Photos
+from django.contrib import admin
 
-fs = FileSystemStorage()
-
-# Create your models here.
-class Photos(models.Model):
-  name = models.CharField(max_length=100, blank=True, null=True)
-  description = models.TextField(blank=True, null=True)
-  photo = models.ImageField(storage=fs, upload_to='photos')
-  tags = models.CharField(max_length=200)
+class PhotosAdmin(admin.ModelAdmin):
+  list_display = ('image_field', 'name','description', 'tags')
+    
+admin.site.register(Photos, PhotosAdmin)
   
-  def image_field(self):
-    return "<img src='%s' width='120px' />" % self.photo.url
-
-  image_field.short_description = 'Thumbnail'	
-  image_field.allow_tags = True
-
