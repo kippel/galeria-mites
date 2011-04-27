@@ -71,6 +71,7 @@
       }
       text_searched = true;
     },'json');
+    pageTracker._trackEvent('ajax', 'load', text_search)
   }
 
  
