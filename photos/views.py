@@ -29,6 +29,7 @@ from django.utils import simplejson
 from django.template import Context, loader
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
+from django.contrib import messages
 import math
 
 def gen_tag_from_photos(photos, threshold=0, maxsize = 3, minsize = 1):
@@ -66,11 +67,8 @@ def gen_tag_from_photos(photos, threshold=0, maxsize = 3, minsize = 1):
 
 def index(request):
   
-  tags = Photos.objects.all()
-  
-  tagcloud= gen_tag_from_photos(tags)
-
-  return render_to_response('main.html', {'tagcloud':tagcloud})
+  photos = Photos.objects.all()
+  return render_to_response('main.html', {'tagcloud':gen_tag_from_photos(photos)}, context_instance = RequestContext(request))
  
 @csrf_exempt 
 def load(request):
@@ -99,10 +97,13 @@ def upload(request):
     form = PhotosForm(request.POST, request.FILES)
     if form.is_valid():
       form.save()
-    
-      form = PhotosForm()
-    #3else:
-    #  print form.errors
+      
+      messages.success(request, "La fotografia s'ha pujat correctament.")  
+      
+      return HttpResponseRedirect('/upload');
+      
+    else:
+      messages.error(request, "No s'ha pujat la fotografia.")
       
   else:
     form = PhotosForm()

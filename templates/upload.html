@@ -1,21 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
-<header>
-aquest pagina tindra login posar aqui una petita capçalera amb el nom de la
-persona que ha fet login i sortir
-</header> 
+<!-- MEDIA_include_css upload -->
+<div id='header'>
+<h1>
+<a href='http://www.elcolador.cat'>
+<img src='http://www.elcolador.cat/logo00.gif' width='200' height='52'></a> 
+<a href='/' class='titol-header'>Mitòmans / en construcció</a>
+</h1>
+</div>
 <div id='container'>
-<p>
-posar aqui petita descripcio de com pujar les imatges
+<div id='div-form-upload'>
+<h2>Pujar Fotografies</h2>
+<p class='info'>
+Amb aquest formulari podeu pujar les fotografies a l'aplicació i aixi
+participar.
 </p>
 <form name='fr_upload' id='id_fr_upload' method='post' enctype='multipart/form-data'>
-	<table>
-	{{form}}
-	</table>	
+	<table id='tb-upload'>
+	<tr><td><label for='id_name'>{{form.name.label}}</label></td>
+	    <td>{{form.name}}
+	    	{{form.name.errors}}
+	    </td>
+	 </tr>
+	
+	<tr><td><label for='id_description'>{{form.description.label}}</label></td>
+	    <td>{{form.description}}
+	    	{{form.description.errors}}
+	    </td>
+	 </tr>
+	<tr><td><label for='id_photo'>{{form.photo.label}}</label></td>
+	    <td>{{form.photo}}
+	    	{{form.photo.errors}}
+	    </td>
+	 </tr>
+	<tr><td><label for='id_tags'>{{form.tags.label}}</label></td>
+	    <td>{{form.tags}} {{form.tags.errors}}</td>
+	 </tr>
+	 
+	</table>
+		
 {% csrf_token %}
-<button type='submit'>Pujar Fotografia</button>
+<br>
+<div class='buttons'>
+<button type='submit' class='positive'>Pujar una Fotografia</button>
+</div> o 
+<a href='/'>Tornar a la pàgina principal</a>
+<div style='clear:both'></div>
 </form>
-
-<p>nuvol de tags per recomanar tags?</p>
+</div>
 </div>
 {% endblock %}

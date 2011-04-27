@@ -28,10 +28,10 @@ fs = FileSystemStorage()
 
 # Create your models here.
 class Photos(models.Model):
-  name = models.CharField(max_length=100, blank=True, null=True)
-  description = models.TextField(blank=True, null=True)
-  photo = models.ImageField(storage=fs, upload_to='photos')
-  tags = models.CharField(max_length=200)
+  name = models.CharField(max_length=100, blank=True, null=True, verbose_name='Nom:')
+  description = models.TextField(blank=True, null=True, verbose_name=u'Descripció:')
+  photo = models.ImageField(storage=fs, upload_to='photos', verbose_name='Fotografia*:')
+  tags = models.CharField(max_length=200, verbose_name='Tags*:')
   
   def image_field(self):
     return "<img src='%s' width='120px' />" % self.photo.url
