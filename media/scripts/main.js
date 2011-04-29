@@ -92,12 +92,12 @@
                 input.focus();
                 
                 if (!first){
-                  var wrapp = $('#tx-search-wrapper');
-                  if ( ! wrapp.hasClass('resaltar')){
+                  //var wrapp = $('#tx-search-wrapper');
+                  if ( ! input.hasClass('resaltar')){
                   
-                      wrapp.addClass('resaltar')
+                      input.addClass('resaltar')
                       setTimeout( function(){
-                        wrapp.removeClass('resaltar');
+                        input.removeClass('resaltar');
                       }, 1000);                    
                   }
                 

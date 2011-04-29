@@ -80,9 +80,7 @@ a:hover {color: #3399cc; text-decoration: none}
 }
 
 .resaltar {
-	border-color:green;
-	
-	box-shadow:3px 3px 3px  rgba(0, 230, 0, 0.90);
+	background-color:#90EE90;
 }
 
   #div-search-header {
@@ -178,3 +176,14 @@ a.button-header:active{
 .ui-notify-cross { margin-top:-4px; float:right; cursor:pointer; text-decoration:none; font-size:12px; font-weight:bold; text-shadow:0 1px 1px #fff; padding:2px }
 .ui-notify-cross:hover { color:#ffffab }
 .ui-notify-cross:active { position:relative; top:1px }
+
+.a-upload-main{
+	margin-left:-350px;
+	display:block;
+	
+}
+
+.a-upload-header{
+
+	display:block;
+}
