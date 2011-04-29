@@ -135,7 +135,7 @@
               search();
             }
             
-            $('#bt-twitter').click( function(e){
+            $('.bt-twitter-search').click( function(e){
                 var url = '';
                 var text = '';
                 if (!first){
