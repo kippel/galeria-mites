@@ -25,6 +25,7 @@
   var first = true;
   var text_searched = false;
   var search_from_hash = false;
+  var last_search = '';
   function search(e){
     if (e){
       e.preventDefault();
@@ -43,7 +44,7 @@
         alert('Heu de posar almenys una paraula de cerca');    
         return false;
     }
-    
+    last_search = text_search;
     $.post('/load', {search : text_search}, function( data){
       
       if (data.num==0){
@@ -59,6 +60,7 @@
           $('#tx-search-header').val( text_search );
           $('#div-search-header').show();
           $('#tx-search-header').focus();
+          $('#bt-twitter').attr('title', 'Compartir la cerca');
         }
         
         $('#galeria').html(data.html);
@@ -75,7 +77,8 @@
 
     _gaq.push(['_trackEvent', 'Fotos', 'load', text_search]);
   }
-
+  
+  var twitter_url = 'http://twitter.com/share?url=http://mitomanies.elcolador.cat/';
  
   $(document).ready( function(){
             
@@ -132,5 +135,15 @@
               search();
             }
             
+            $('#bt-twitter').click( function(e){
+                var url = '';
+                var text = '';
+                if (!first){
+                  url = '%23'+last_search.replace(' ','%2B');
+                  text = '&text='+last_search.replace(' ','%20');
+                }
+                
+                $(this).attr('href',twitter_url+url+text);
+            });
             
   });

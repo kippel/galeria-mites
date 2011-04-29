@@ -148,6 +148,32 @@ a.button-header:active{
 	background-position:0 -58px;
 }
 
+a.button-social {
+	background-color: transparent;
+        background-repeat: no-repeat;
+        width: 23px;
+        height: 23px;
+	background-position: 0 0px;
+	display:inline-block;
+
+
+}
+
+a#bt-twitter {
+	background-image:url(twitter01.png);
+}
+
+a#bt-twitter:hover {
+	background-image:url(twitter02.png);
+}
+
+a#bt-facebook{
+	background-image:url(facebook01.png);
+}
+
+a#bt-facebook:hover{
+	background-image:url(facebook02.png);
+}
 
 .details {
 	
@@ -213,4 +239,14 @@ a.button-header:active{
 #logo-colador {
 	opacity:0.8;
 	filter:alpha(opacity=80);
+}
+
+#social-menu {
+	padding:0px;
+	margin:0px;
+}
+
+#social-menu li{
+	display:inline;
+	
 }
