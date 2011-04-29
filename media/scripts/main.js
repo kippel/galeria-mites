@@ -55,6 +55,7 @@
           first = false;
           $('#div-search').hide('slow');
           $('#main-tagcloud').hide();
+          $('#div-info').hide();
           $('#tx-search-header').val( text_search );
           $('#div-search-header').show();
           $('#tx-search-header').focus();
