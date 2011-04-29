@@ -187,3 +187,25 @@ a.button-header:active{
 
 	display:block;
 }
+
+
+#followTab {
+
+
+  /* Position and float the tab */  
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 0px;
+  
+  /* Give the tab width and padding */
+  width: 200px;
+  padding: 8px 5px;
+  
+  
+  /* Add the drop shadow */
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+  box-shadow: 0 0 7px rgba(0, 0, 0, .6);
+  
+}
