@@ -79,6 +79,7 @@
   }
   
   var twitter_url = 'http://twitter.com/share?url=http://mitomanies.elcolador.cat/';
+  var facebook_url = 'http://www.facebook.com/sharer.php?u=http://mitomanies.elcolador.cat/';
  
   $(document).ready( function(){
             
@@ -144,6 +145,16 @@
                 }
                 
                 $(this).attr('href',twitter_url+url+text);
+            });
+            
+            $('.bt-facebook-search').click( function(e){
+              var url = '';
+              if (!first){
+                  url = '%23'+last_search.replace(' ','%2B');
+                  
+              }
+              $(this).attr('href', facebook_url+url);
+              
             });
             
   });
