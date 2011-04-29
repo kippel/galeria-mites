@@ -244,6 +244,8 @@ a#bt-facebook:hover{
 #social-menu {
 	padding:0px;
 	margin:0px;
+	display:inline;
+	
 }
 
 #social-menu li{
