@@ -39,19 +39,21 @@ def gen_tag_from_photos(photos, threshold=0, maxsize = 3, minsize = 1):
     for tag in photo.tags.rsplit(' '):
       taglist[tag] = 1+taglist.get(tag,0);
 
+  if len(taglist) == 0:
+    return []
   
   # miro el maxim i el minim i elimino els que no superen el trheshold
   mincount, maxcount = 5000, 0;
   for (x, p) in taglist.items():
     if p <= threshold or len(x) <=2:
       del taglist[x]
-      continue
+      continue    
     
     if p > maxcount:
       maxcount=p
     if p < mincount:
       mincount=p
-  
+      
   constant = (math.log(maxcount -(mincount -1 )) /(maxsize -minsize or 1)  or 1)
 
   tagcloud = []
