@@ -1,7 +1,8 @@
 /*
 #       style.py     
 #       
-#       Copyright 2011 David <kippeld@gmail.com>            
+#       Copyright 2011 Fina de Lopez
+#		       David <kippeld@gmail.com>            
 #                      Arnau <sacaix@gmail.com>
 #       
 #       This program is free software; you can redistribute it and/or modify
@@ -62,8 +63,9 @@ a:hover {color: #3399cc; text-decoration: none}
   }
 
   #div-search-header {
-	float:right;
-	 
+	margin:auto;
+	width:350px;
+	margin-top:40px;	 
   }
 
   #tx-search-main {
