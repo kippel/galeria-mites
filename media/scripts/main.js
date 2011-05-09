@@ -91,8 +91,16 @@
                      input.val(''); 
                      text_searched = false;  
                 }
+     
+                var new_text = $(this).html();
+                var tokens = input.val().split(' ');
+                for (i=0;i<tokens.length;++i){
+              
+                    if (new_text == tokens[i])
+                      return true;
+                }
                 
-                var text = (input.val() == '') ? $(this).html() : input.val()+' '+$(this).html();
+                var text = (input.val() == '') ? new_text : input.val()+' '+new_text;
                 input.val( text);
                 input.focus();
                 
