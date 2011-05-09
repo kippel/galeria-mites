@@ -96,8 +96,10 @@
                 var tokens = input.val().split(' ');
                 for (i=0;i<tokens.length;++i){
               
-                    if (new_text == tokens[i])
+                    if (new_text == tokens[i]){
+                      input.focus();
                       return true;
+                    }
                 }
                 
                 var text = (input.val() == '') ? new_text : input.val()+' '+new_text;
