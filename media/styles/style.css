@@ -254,3 +254,21 @@ a#bt-facebook:hover{
 	display:inline;
 	
 }
+#div-related-links {
+	text-align:center;
+}
+#related-links {
+	margin-top:50px;
+	list-style-type:none;
+	text-shadow: 0px 0px #666666;
+}
+#related-links li {
+	
+	display: inline;
+	
+}
+
+#related-links a {
+	color:white;
+	text-decoration:underline;	
+}

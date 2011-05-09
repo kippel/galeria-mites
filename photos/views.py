@@ -71,6 +71,9 @@ def index(request):
   
   photos = Photos.objects.all()
   return render_to_response('main.html', {'tagcloud':gen_tag_from_photos(photos)}, context_instance = RequestContext(request))
+
+def about(request):
+  return render_to_response('about.html', context_instance = RequestContext(request))
  
 @csrf_exempt 
 def load(request):

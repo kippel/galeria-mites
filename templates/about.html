@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- MEDIA_include_css upload -->
+<div id='header'>
+<h1>
+<a href='/' class='titol-header'><img src='{{MEDIA_URL}}styles/titol00.png' border='0' width='452' height='72'></a>
+</h1>
+</div>
+
+<div id='container'>
+<div id='div-form-upload'>
+<h2>Informació del Programa</h2>
+<p class='info'>
+Informació dels autors de programa.
+</p>
+
+<p>
+<ul>
+<li>Idea original: Fina de Lopez i <a href='http://www.elcolador.cat'>elColador</a></li>
+<li>Maquetació: Arnau Bellavista (sacaix@gmail.com)</li>
+<li>Programació: David Font (kippeld@gmail.com)</li>
+</ul>
+<a href='https://github.com/kippel/galeria-mites'>Codi Font</a> del programa
+</p>
+<p>
+<div style='float:right;'><a href='/'>Tornar a la pàgina principal</a></div>
+</p>
+</div>
+</div>
+
+<div id='followTab'>
+
+<a href='http://www.elcolador.cat'>
+<img  src='http://www.elcolador.cat/logo00.gif' border='0' width='200' height='52'></a> 
+ 
+</div>
+
+{% endblock %}
